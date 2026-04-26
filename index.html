@@ -1,0 +1,391 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.lf { background: #FAF0E6; font-family: Georgia, serif; color: #2A1A08; }
+.lf-hero { background: #FAF0E6; padding: 2rem 2rem 1.75rem; text-align: center; border-bottom: 3px solid #C41E3A; }
+.lf-hours { font-family: sans-serif; font-size: 12px; letter-spacing: 3px; color: #B88018; text-transform: uppercase; margin-bottom: 6px; font-weight: 700; }
+.lf-branch { font-family: sans-serif; font-size: 13px; color: #5A3A1A; font-weight: 600; margin-bottom: 1rem; letter-spacing: 0.5px; }
+.lf-branch span { color: #C41E3A; font-weight: 700; }
+.lf-brand { font-size: 44px; font-weight: 700; color: #2A1A08; }
+.lf-brand span { color: #C41E3A; }
+.lf-trow { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 14px; }
+.lf-tline { width: 60px; height: 1px; background: #B88018; }
+.lf-tagline { font-size: 22px; font-style: italic; color: #C41E3A; letter-spacing: 1px; }
+.lf-trust { background: #C41E3A; padding: 10px 2rem; text-align: center; font-family: sans-serif; font-size: 13px; color: #FAF0E6; font-style: italic; }
+.wa-wrap { padding: 16px 2rem 0; }
+.wa-bub { background: #FFF8F0; border: 1px solid #E0C090; border-radius: 12px; overflow: hidden; }
+.wa-top { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; padding: 16px 18px 14px; }
+.wa-icon { background: #25D366; border-radius: 50%; width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.wa-num { font-family: sans-serif; font-size: 20px; color: #B88018; font-weight: 900; letter-spacing: 1px; }
+.wa-div { height: 2px; background: linear-gradient(to right, transparent, #E0C090, #B88018, #E0C090, transparent); margin: 0 18px; }
+.wa-bot { display: grid; grid-template-columns: 1fr 1fr; }
+.wa-cell { padding: 12px 18px; display: flex; align-items: center; justify-content: center; font-family: sans-serif; font-size: 11px; color: #C41E3A; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+.wa-cell:first-child { border-right: 1px solid #E0C090; }
+.pills-wrap { padding: 14px 2rem 1.5rem; }
+.pills-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
+.pill { background: #FFF8F0; color: #5A3A1A; font-size: 12px; font-family: sans-serif; padding: 8px 14px; border-radius: 20px; border: 0.5px solid #D4A070; text-align: center; }
+.body { padding: 1.5rem; }
+.sec { margin-bottom: 2.5rem; }
+.sh { display: flex; align-items: center; gap: 10px; margin-bottom: 1.25rem; }
+.sh-line { flex: 1; height: 0.5px; background: #B88018; opacity: 0.4; }
+.sh-title { font-size: 24px; font-style: italic; font-weight: 700; color: #C41E3A; white-space: nowrap; }
+.pkg-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; margin-bottom: 10px; }
+.pkg-card { background: #FFF8F0; border: 0.5px solid #E8D5C4; border-top: 3px solid #C41E3A; border-radius: 8px; padding: 14px 8px; text-align: center; }
+.pkg-name { font-size: 13px; font-style: italic; color: #2A1A08; margin-bottom: 5px; line-height: 1.3; }
+.pkg-count { font-size: 11px; font-family: sans-serif; color: #777; margin-bottom: 7px; font-weight: 600; }
+.pkg-price { font-size: 20px; color: #C41E3A; font-family: sans-serif; font-weight: 700; }
+.terms-bar { background: #FFF8F0; border: 0.5px solid #EEE0D0; border-radius: 6px; padding: 8px 14px; text-align: center; font-family: sans-serif; font-size: 10px; color: #bbb; line-height: 1.8; margin-bottom: 6px; }
+.terms-bar b { color: #B88018; }
+.vat-line { text-align: center; font-family: sans-serif; font-size: 10px; color: #C41E3A; font-style: italic; margin-top: 4px; font-weight: 600; }
+.isub { background: #FFF8F0; border: 0.5px solid #E8D5C4; border-radius: 10px; padding: 14px 20px; margin-bottom: 8px; }
+.isub-title { font-size: 11px; font-family: sans-serif; letter-spacing: 2.5px; text-transform: uppercase; color: #B88018; font-weight: 700; text-align: center; padding-bottom: 8px; margin-bottom: 10px; border-bottom: 0.5px solid #F0DEC8; }
+.ig2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; max-width: 88%; margin: 0 auto; }
+.li { font-size: 13px; font-family: sans-serif; color: #2A1A08; padding: 7px 0; border-bottom: 0.5px solid #F0DEC8; display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; }
+.li:last-child { border-bottom: none; }
+.dot { width: 5px; height: 5px; border-radius: 50%; background: #C41E3A; flex-shrink: 0; margin-top: 5px; }
+.note { font-size: 10px; color: #B88018; font-style: italic; display: block; margin-top: 2px; }
+.price-note { font-family: sans-serif; font-size: 10px; color: #aaa; text-align: center; margin-bottom: 10px; }
+.price-note b { color: #C41E3A; }
+.pcols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.pt { width: 100%; border: 0.5px solid #E8D5C4; border-radius: 10px; overflow: hidden; border-collapse: collapse; font-family: sans-serif; }
+.pt thead td { background: #C41E3A; color: #FFF8F0; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 11px 14px; }
+.pt tr:nth-child(odd) td { background: #FDFAF5; }
+.pt tr:nth-child(even) td { background: #FFF8F0; }
+.pt td { padding: 9px 14px; border-bottom: 0.5px solid #F0E0CC; font-size: 13px; color: #2A1A08; vertical-align: middle; }
+.pt td:last-child { color: #C41E3A; font-size: 14px; font-weight: 700; text-align: right; white-space: nowrap; }
+.p-staff { background: #FFF8F0; border: 0.5px solid #E8D5C4; border-radius: 8px; padding: 12px 16px; margin-top: 10px; text-align: center; font-family: sans-serif; font-size: 13px; font-style: italic; color: #5A3A1A; }
+.p-door { background: #FFF8F0; border: 0.5px solid #E8D5C4; border-radius: 8px; padding: 10px 16px; margin-top: 8px; text-align: center; font-family: sans-serif; font-size: 13px; color: #5A3A1A; }
+.p-door b { color: #C41E3A; }
+.sp-feat { background: #FFF8F0; border: 1.5px solid #B88018; border-radius: 12px; padding: 20px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.sp-fnum { font-size: 38px; font-family: sans-serif; font-weight: 700; color: #B88018; line-height: 1; }
+.sp-flbl { font-size: 10px; font-family: sans-serif; text-transform: uppercase; letter-spacing: 2px; color: #bbb; }
+.sp-fname { font-size: 24px; font-style: italic; font-weight: 700; color: #2A1A08; margin-bottom: 6px; }
+.sp-fdesc { font-size: 12px; font-family: sans-serif; color: #777; line-height: 1.6; }
+.sp-fpl { font-size: 11px; font-family: sans-serif; color: #bbb; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; text-align: right; }
+.sp-fpn { font-size: 28px; font-family: sans-serif; font-weight: 700; color: #C41E3A; }
+.sp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+.sp-card { background: #FFF8F0; border: 0.5px solid #E8D5C4; border-radius: 10px; padding: 16px 14px; display: flex; flex-direction: column; }
+.sp-snum { font-size: 28px; font-family: sans-serif; font-weight: 700; color: #B88018; line-height: 1; }
+.sp-slbl { font-size: 10px; font-family: sans-serif; text-transform: uppercase; letter-spacing: 1.5px; color: #bbb; margin-bottom: 8px; }
+.sp-name { font-size: 16px; font-style: italic; font-weight: 700; color: #2A1A08; margin-bottom: 5px; line-height: 1.3; }
+.sp-desc { font-size: 12px; font-family: sans-serif; color: #777; line-height: 1.6; flex: 1; margin-bottom: 10px; }
+.sp-price { font-size: 18px; color: #C41E3A; font-family: sans-serif; font-weight: 700; }
+.btbl { background: #FFF8F0; border: 0.5px solid #E8D5C4; border-radius: 10px; overflow: hidden; }
+.bhead { background: #C41E3A; color: #FFF8F0; font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase; font-family: sans-serif; padding: 13px 20px; text-align: center; font-weight: 700; }
+.bgrid { display: grid; grid-template-columns: 1fr 1fr; }
+.brow { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; border-bottom: 1px solid #F0DEC8; font-family: sans-serif; }
+.brow:last-child { border-bottom: none; }
+.brow:nth-child(odd) { background: #FDFAF5; }
+.brow:nth-child(even) { background: #FFF8F0; }
+.bn { font-size: 13px; color: #2A1A08; }
+.bp { font-size: 15px; color: #C41E3A; font-weight: 700; }
+.ntbl { background: #FFF8F0; border: 0.5px solid #E8D5C4; border-radius: 10px; overflow: hidden; }
+.nhead { background: #C41E3A; color: #FFF8F0; font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase; font-family: sans-serif; padding: 13px 20px; text-align: center; font-weight: 700; }
+.ngrid { display: grid; grid-template-columns: 1fr 1fr; }
+.nrow { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; border-bottom: 1px solid #F0DEC8; border-right: 0.5px solid #F0DEC8; font-family: sans-serif; }
+.nrow.r { border-right: none; }
+.nrow:nth-child(4n+1),.nrow:nth-child(4n+2) { background: #FDFAF5; }
+.nrow:nth-child(4n+3),.nrow:nth-child(4n+4) { background: #FFF8F0; }
+.nn { font-size: 13px; color: #2A1A08; }
+.np { font-size: 15px; color: #C41E3A; font-weight: 700; }
+.fhero { background: #C41E3A; border-radius: 12px; padding: 22px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.fh-badge { font-size: 10px; font-family: sans-serif; letter-spacing: 2.5px; text-transform: uppercase; color: #FFD9C8; margin-bottom: 8px; }
+.fh-name { font-size: 30px; font-style: italic; font-weight: 700; color: #FFF8F0; margin-bottom: 6px; }
+.fh-desc { font-size: 12px; font-family: sans-serif; color: #FFD9C8; line-height: 1.6; max-width: 320px; }
+.fh-pl { font-size: 11px; font-family: sans-serif; color: #FFD9C8; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; }
+.fh-price { font-size: 22px; font-family: sans-serif; font-weight: 700; color: #FFF8F0; }
+.fgrid { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; }
+.fcard { background: #FFF8F0; border: 2px solid #D4A070; border-radius: 10px; padding: 14px 10px; text-align: center; }
+.fname { font-size: 13px; color: #1A0800; font-weight: 700; margin-bottom: 5px; line-height: 1.3; }
+.fsub { font-size: 11px; color: #555; line-height: 1.5; }
+.fnote { font-family: sans-serif; font-size: 11px; color: #aaa; text-align: center; margin-top: 8px; }
+.egrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.ecard { border-radius: 12px; padding: 22px 20px; text-align: center; }
+.ep { background: #FDDCBB; border: 0.5px solid #D4A070; }
+.er { background: #2A1A08; border: 0.5px solid #B88018; }
+.ebadge { font-size: 10px; font-family: sans-serif; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+.ename { font-size: 17px; font-style: italic; margin-bottom: 8px; }
+.eprice { font-size: 28px; font-family: sans-serif; font-weight: 700; color: #C41E3A; margin-bottom: 10px; }
+.edesc { font-size: 12px; font-family: sans-serif; line-height: 1.7; }
+.cbox { background: #FFF8F0; border: 0.5px solid #E8D5C4; border-radius: 10px; padding: 1.5rem; }
+.cgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px 12px; }
+.ci { text-align: center; padding: 6px 0; }
+.ci-loc { font-size: 12px; font-family: sans-serif; color: #B88018; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; justify-content: center; gap: 5px; }
+.ci-tel { font-size: 12px; font-family: sans-serif; color: #5A3A1A; line-height: 1.8; }
+.cdiv { height: 0.5px; background: #F0DEC8; grid-column: 1/-1; }
+.tbox { background: #FFF8F0; border: 0.5px solid #E8D5C4; border-radius: 10px; padding: 1.5rem; }
+.ttitle { font-size: 16px; font-style: italic; font-weight: 700; color: #C41E3A; text-align: center; margin-bottom: 12px; }
+.tgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+.term { font-size: 12px; font-family: sans-serif; color: #2A1A08; padding: 6px 0; border-bottom: 0.5px solid #F0DEC8; display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
+.tdot { width: 4px; height: 4px; border-radius: 50%; background: #B88018; flex-shrink: 0; margin-top: 5px; }
+.footer { text-align: center; padding: 1.5rem; border-top: 0.5px solid #E8D5C4; }
+.footer-tag { font-size: 14px; font-style: italic; color: #999; line-height: 1.6; }
+.footer-links { display: flex; justify-content: center; gap: 20px; margin-top: 12px; }
+.footer-link { font-size: 12px; font-family: sans-serif; letter-spacing: 1.5px; text-transform: uppercase; color: #C41E3A; }
+</style>
+
+<div class="lf">
+
+<!-- HERO -->
+<div class="lf-hero">
+  <div class="lf-hours">All Days &nbsp;·&nbsp; 10 am to 10 pm</div>
+  <div class="lf-branch"><span>Executive Tower</span> &nbsp;·&nbsp; Business Bay, Dubai</div>
+  <div class="lf-brand">The <span>Red</span> Lounge</div>
+  <div class="lf-trow"><div class="lf-tline"></div><div class="lf-tagline">Our focus is your beauty</div><div class="lf-tline"></div></div>
+</div>
+
+<div class="lf-trust">"Trusted by thousands of ladies across Dubai since 2006"</div>
+
+<!-- WHATSAPP -->
+<div class="wa-wrap">
+  <div class="wa-bub">
+    <div class="wa-top">
+      <span style="font-family:sans-serif;font-size:13px;color:#5A3A1A;">Book your appointment easily, contact us on</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;">
+        <span class="wa-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.849L.057 23.535a.75.75 0 00.92.92l5.686-1.475A11.932 11.932 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.718 9.718 0 01-4.979-1.371l-.356-.212-3.698.959.981-3.584-.232-.369A9.718 9.718 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg></span>
+        <span class="wa-num">050 752 2604</span>
+      </span>
+    </div>
+    <div class="wa-div"></div>
+    <div class="wa-bot">
+      <div class="wa-cell">Home Service Available</div>
+      <div class="wa-cell">Gift Vouchers Available</div>
+    </div>
+  </div>
+</div>
+
+<!-- PILLS -->
+<div class="pills-wrap">
+  <div class="pills-grid">
+    <span class="pill">Threading</span><span class="pill">Henna</span><span class="pill">Waxing</span><span class="pill">Moroccan Bath</span>
+    <span class="pill">Hair Cuts &amp; Colour</span><span class="pill">Bridal Make Up</span><span class="pill">Facials</span><span class="pill">Manicures &amp; Pedicures</span>
+    <span class="pill">Body Massage</span><span class="pill">Gel &amp; Acrylic Nails</span><span class="pill">Bridal Services</span><span class="pill">Body Scrub &amp; Polish</span>
+  </div>
+</div>
+
+<div class="body">
+
+<!-- PACKAGES -->
+<div class="sec">
+  <div class="sh"><div class="sh-line"></div><div class="sh-title">Packages</div><div class="sh-line"></div></div>
+  <div class="pkg-grid">
+    <div class="pkg-card"><div class="pkg-name">The Red Carpet</div><div class="pkg-count">any 5 items</div><div class="pkg-price">AED 230</div></div>
+    <div class="pkg-card"><div class="pkg-name">The Red Hot</div><div class="pkg-count">any 8 items</div><div class="pkg-price">AED 260</div></div>
+    <div class="pkg-card"><div class="pkg-name">The Red Ruby</div><div class="pkg-count">any 10 items</div><div class="pkg-price">AED 290</div></div>
+    <div class="pkg-card"><div class="pkg-name">The Red Door</div><div class="pkg-count">any 12 items</div><div class="pkg-price">AED 315</div></div>
+    <div class="pkg-card"><div class="pkg-name">The Red House</div><div class="pkg-count">any 14 items</div><div class="pkg-price">AED 340</div></div>
+  </div>
+  <div class="terms-bar"><b>Terms:</b> Payment in full prior to start &nbsp;·&nbsp; Valid for one month only &nbsp;·&nbsp; Cannot be shared by 2 or more ladies &nbsp;·&nbsp; Items cannot be repeated &nbsp;·&nbsp; Customised packages available &nbsp;·&nbsp; Prior appointments recommended &nbsp;·&nbsp; Prices subject to change</div>
+  <div class="vat-line">* All prices are exclusive of 5% VAT</div>
+</div>
+
+<!-- ITEMS INCLUDED -->
+<div class="sec">
+  <div class="sh"><div class="sh-line"></div><div class="sh-title">Items Included</div><div class="sh-line"></div></div>
+  <div class="isub"><div class="isub-title">Threading &amp; Waxing</div><div class="ig2">
+    <div class="li"><div class="dot"></div>Eyebrow / upperlip / full face threading or waxing</div>
+    <div class="li"><div class="dot"></div>Hands waxing</div>
+    <div class="li"><div class="dot"></div>Legs waxing</div>
+    <div class="li"><div class="dot"></div>Underarms waxing</div>
+    <div class="li"><div class="dot"></div>Bikini / back / stomach waxing<span class="note">counts as 2 items each</span></div>
+  </div></div>
+  <div class="isub"><div class="isub-title">Hair Treatments</div><div class="ig2">
+    <div class="li"><div class="dot"></div><div>Hair wash and blow dry<span class="note">counts as 2 items, depending on hair length</span></div></div>
+    <div class="li"><div class="dot"></div><div>Hot oil treatment with neck, shoulder massage &amp; hair wash<span class="note">counts as 2 items, depending on hair length</span></div></div>
+    <div class="li"><div class="dot"></div><div>Deep conditioning with neck, shoulder massage &amp; hair wash<span class="note">counts as 2 items, depending on hair length</span></div></div>
+    <div class="li"><div class="dot"></div><div>Hair cut<span class="note">counts as 2 items</span></div></div>
+    <div class="li"><div class="dot"></div>Root touch up with hair wash</div>
+    <div class="li"><div class="dot"></div>Henna application on hair</div>
+    <div class="li"><div class="dot"></div><div>Henna application on hair with hair wash<span class="note">counts as 2 items</span></div></div>
+  </div></div>
+  <div class="isub"><div class="isub-title">Nails</div><div class="ig2">
+    <div class="li"><div class="dot"></div>Spa manicure</div>
+    <div class="li"><div class="dot"></div>Spa pedicure</div>
+    <div class="li"><div class="dot"></div>Nail file / polish change (hands or feet)</div>
+    <div class="li"><div class="dot"></div>Gel polish application</div>
+  </div></div>
+  <div class="isub"><div class="isub-title">Beauty Treatments</div><div class="ig2">
+    <div class="li"><div class="dot"></div>Face, back and neck bleach</div>
+    <div class="li"><div class="dot"></div>Face clean up (20 min)</div>
+  </div></div>
+  <div class="isub"><div class="isub-title">Body Treatments</div><div class="ig2">
+    <div class="li"><div class="dot"></div>Body polish</div>
+    <div class="li"><div class="dot"></div>Body scrub</div>
+    <div class="li"><div class="dot"></div>Body mask</div>
+    <div class="li"><div class="dot"></div>Body massage (20 min)</div>
+  </div></div>
+</div>
+
+<!-- PRICE LIST -->
+<div class="sec">
+  <div class="sh"><div class="sh-line"></div><div class="sh-title">Price List</div><div class="sh-line"></div></div>
+  <div class="price-note">* All prices listed in <b>AED</b></div>
+  <div class="pcols">
+    <table class="pt">
+      <thead><tr><td colspan="2">Hair &amp; Threading Services</td></tr></thead>
+      <tr><td>Eyebrow threading / waxing</td><td>30</td></tr>
+      <tr><td>Upperlip or chin threading / waxing</td><td>15 / 25</td></tr>
+      <tr><td>Sides / neck threading / waxing</td><td>30 / 40</td></tr>
+      <tr><td>Full face threading / waxing</td><td>60 / 70</td></tr>
+      <tr><td>Eyebrow tinting</td><td>50</td></tr>
+      <tr><td>Hair wash and blow dry</td><td>85 onwards</td></tr>
+      <tr><td>Hair cut (without hair wash and blow dry)</td><td>85</td></tr>
+      <tr><td>Hair cut (with hair wash and blow dry)</td><td>150 onwards</td></tr>
+      <tr><td>Root touch up</td><td>85 onwards</td></tr>
+      <tr><td>Hot oil treatment with massage &amp; wash</td><td>85 onwards</td></tr>
+      <tr><td>Deep conditioning with massage &amp; wash</td><td>85 onwards</td></tr>
+      <tr><td>Henna application with wash</td><td>85 onwards</td></tr>
+      <tr><td>Henna on hand (arabic / indian)</td><td>40 onwards</td></tr>
+    </table>
+    <table class="pt">
+      <thead><tr><td colspan="2">Waxing, Nails &amp; Body</td></tr></thead>
+      <tr><td>Hands waxing — half / full</td><td>50 / 60</td></tr>
+      <tr><td>Legs waxing — half / full</td><td>60 / 70</td></tr>
+      <tr><td>Underarms waxing</td><td>35</td></tr>
+      <tr><td>Bikini line</td><td>50</td></tr>
+      <tr><td>Full bikini / stomach / back waxing — each</td><td>95</td></tr>
+      <tr><td>Full body waxing</td><td>250</td></tr>
+      <tr><td>Spa manicure</td><td>60</td></tr>
+      <tr><td>Spa pedicure</td><td>70</td></tr>
+      <tr><td>Nail file / polish change — each</td><td>30 / 30</td></tr>
+      <tr><td>Face, neck and back bleach</td><td>60</td></tr>
+      <tr><td>Face clean up (20 min)</td><td>90 onwards</td></tr>
+      <tr><td>Facial</td><td>As per consultancy</td></tr>
+      <tr><td>Body polish / scrub — each</td><td>105</td></tr>
+      <tr><td>Body massage (1 hour)</td><td>160</td></tr>
+    </table>
+  </div>
+  <div class="p-staff">Our team is always here to take care of your every beauty need — just ask us.</div>
+  <div class="p-door">Also available at your doorstep — contact us on <b>050 752 2604</b></div>
+  <div class="vat-line" style="margin-top:8px;">* All prices are exclusive of 5% VAT</div>
+</div>
+
+<!-- SPECIAL PACKAGES -->
+<div class="sec">
+  <div class="sh"><div class="sh-line"></div><div class="sh-title">Special Packages</div><div class="sh-line"></div></div>
+  <div class="sp-feat">
+    <div style="display:flex;align-items:center;gap:18px;">
+      <div style="text-align:center;padding-right:18px;border-right:0.5px solid #E8D5C4;flex-shrink:0;">
+        <div class="sp-fnum">10</div><div class="sp-flbl">Sessions</div>
+      </div>
+      <div><div class="sp-fname">The Great Red Wave</div><div class="sp-fdesc">The ultimate hair care experience — combining our full range of wash, blow dry and conditioning treatments for a complete transformation.</div></div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;"><div class="sp-fpl">Package price</div><div class="sp-fpn">AED 600 onwards</div></div>
+  </div>
+  <div class="sp-grid">
+    <div class="sp-card"><div class="sp-snum">4</div><div class="sp-slbl">Sessions</div><div class="sp-name">The Red Wave</div><div class="sp-desc">Hair wash &amp; blow dry — salon-fresh results every time.</div><div class="sp-price">AED 250 onwards</div></div>
+    <div class="sp-card"><div class="sp-snum">3</div><div class="sp-slbl">Sessions</div><div class="sp-name">The Red Glow</div><div class="sp-desc">Hot oil treatment with hair wash &amp; quick dry — deep shine and nourishment.</div><div class="sp-price">AED 250 onwards</div></div>
+    <div class="sp-card"><div class="sp-snum">3</div><div class="sp-slbl">Sessions</div><div class="sp-name">The Red Velvet</div><div class="sp-desc">Deep conditioning with hair wash &amp; quick dry — silky smooth perfection.</div><div class="sp-price">AED 250 onwards</div></div>
+    <div class="sp-card"><div class="sp-snum">4</div><div class="sp-slbl">Sessions</div><div class="sp-name">The Red Revival</div><div class="sp-desc">Anti-dandruff treatment — a fresh, healthy scalp restored.</div><div class="sp-price">AED 750 onwards</div></div>
+    <div class="sp-card"><div class="sp-snum">3</div><div class="sp-slbl">Sessions</div><div class="sp-name">The Red Bloom</div><div class="sp-desc">Hair nourishing treatment — nature-inspired care for vibrant, healthy hair.</div><div class="sp-price">AED 300 onwards</div></div>
+    <div class="sp-card"><div class="sp-snum">4</div><div class="sp-slbl">Sessions</div><div class="sp-name">The Red Restore</div><div class="sp-desc">Hair loss treatment — targeted care to strengthen and revive.</div><div class="sp-price">AED 750 onwards</div></div>
+  </div>
+  <div class="vat-line" style="margin-top:10px;">* All prices are exclusive of 5% VAT</div>
+</div>
+
+<!-- MOROCCAN BATH -->
+<div class="sec">
+  <div class="sh"><div class="sh-line"></div><div class="sh-title">Moroccan Bath</div><div class="sh-line"></div></div>
+  <div class="btbl"><div class="bhead">Moroccan Bath</div><div class="bgrid">
+    <div class="brow"><span class="bn">Moroccan bath</span><span class="bp">AED 105</span></div>
+    <div class="brow"><span class="bn">Moroccan bath with clay mask</span><span class="bp">AED 160</span></div>
+    <div class="brow"><span class="bn">Moroccan bath with body massage</span><span class="bp">AED 210</span></div>
+    <div class="brow"><span class="bn">Clay mask &amp; body massage</span><span class="bp">AED 235</span></div>
+    <div class="brow"><span class="bn">Clay mask, massage &amp; hair wash</span><span class="bp">AED 290</span></div>
+    <div class="brow"><span class="bn">Loofah add-on</span><span class="bp">AED 20</span></div>
+  </div></div>
+  <div class="vat-line" style="margin-top:8px;">* All prices are exclusive of 5% VAT</div>
+</div>
+
+<!-- NAIL EXTENSIONS -->
+<div class="sec">
+  <div class="sh"><div class="sh-line"></div><div class="sh-title">Nail Extensions</div><div class="sh-line"></div></div>
+  <div class="ntbl"><div class="nhead">Gel &amp; Acrylic — All Options</div><div class="ngrid">
+    <div class="nrow"><span class="nn">Gel polish removal</span><span class="np">AED 40</span></div>
+    <div class="nrow r"><span class="nn">Nail repair (per nail)</span><span class="np">AED 40</span></div>
+    <div class="nrow"><span class="nn">Toe nail repair (per nail)</span><span class="np">AED 50</span></div>
+    <div class="nrow r"><span class="nn">Gel polish application</span><span class="np">AED 60</span></div>
+    <div class="nrow"><span class="nn">Nail extension removal</span><span class="np">AED 80</span></div>
+    <div class="nrow r"><span class="nn">Refill — gel or acrylic</span><span class="np">AED 160</span></div>
+    <div class="nrow"><span class="nn">New set — gel or acrylic</span><span class="np">AED 275</span></div>
+    <div class="nrow r"><span class="nn">New set with french tip — gel or acrylic</span><span class="np">AED 290</span></div>
+  </div></div>
+  <div class="vat-line" style="margin-top:8px;">* All prices are exclusive of 5% VAT</div>
+</div>
+
+<!-- FACIALS -->
+<div class="sec">
+  <div class="sh"><div class="sh-line"></div><div class="sh-title">Facials</div><div class="sh-line"></div></div>
+  <div class="fhero">
+    <div><div class="fh-badge">Our Signature Facial for a</div><div class="fh-name">Hydra Facial</div><div class="fh-desc">Total skin transformation — deep cleansing, intense hydration and a radiant glow, all in a single luxurious session. Suitable for all skin types.</div></div>
+    <div style="text-align:right;flex-shrink:0;"><div class="fh-pl">Now at!</div><div class="fh-price">AED 315</div></div>
+  </div>
+  <div class="fgrid">
+    <div class="fcard"><div class="fname">Dermalogica</div><div class="fsub">Clinical skincare formulations</div></div>
+    <div class="fcard"><div class="fname">Dr. Renaud</div><div class="fsub">Premium French facial treatments</div></div>
+    <div class="fcard"><div class="fname">Shahnaz Hussain</div><div class="fsub">Trusted herbal specialist</div></div>
+    <div class="fcard"><div class="fname">Casmara</div><div class="fsub">Spanish luxury skincare</div></div>
+    <div class="fcard"><div class="fname">VLCC</div><div class="fsub">Proven &amp; trusted beauty care</div></div>
+  </div>
+  <div class="fnote">All facial prices are on consultancy — our team will guide you to the best treatment for your skin</div>
+  <div class="vat-line" style="margin-top:6px;">* All prices are exclusive of 5% VAT</div>
+</div>
+
+<!-- EXCLUSIVE PACKAGES -->
+<div class="sec">
+  <div class="sh"><div class="sh-line"></div><div class="sh-title">Exclusive Packages</div><div class="sh-line"></div></div>
+  <div class="egrid">
+    <div class="ecard ep"><div class="ebadge" style="color:#8B1A2C;">The Princess Package</div><div class="ename" style="color:#2A1A08;">For our little guests</div><div class="eprice">AED 105</div><div class="edesc" style="color:#5A3A1A;">Manicure, pedicure, hair wash and hair trim — for children under 10 years of age.</div></div>
+    <div class="ecard er"><div class="ebadge" style="color:#B88018;">The Royal Package</div><div class="ename" style="color:#FAF0E6;">The ultimate indulgence</div><div class="eprice">AED 630</div><div class="edesc" style="color:#C8B89A;">Paraffin mani &amp; pedi, gel polish, full body wax, body polish, full face threading, Dr. Renaud facial, Moroccan bath, body massage, clay mask, hot oil treatment, hair wash, cut &amp; blow dry.</div></div>
+  </div>
+  <div class="vat-line" style="margin-top:10px;">* All prices are exclusive of 5% VAT</div>
+</div>
+
+<!-- FIND US -->
+<div class="sec">
+  <div class="sh"><div class="sh-line"></div><div class="sh-title">Find Us</div><div class="sh-line"></div></div>
+  <div class="cbox"><div class="cgrid">
+    <div class="ci"><div class="ci-loc">Executive Tower</div><div class="ci-tel">04 4430581<br>04 4430523</div></div>
+    <div class="ci"><div class="ci-loc">Tecom, Al Barsha</div><div class="ci-tel">04 4225710<br>04 4225711</div></div>
+    <div class="ci"><div class="ci-loc">JBR</div><div class="ci-tel">04 4324295<br>04 4324296</div></div>
+    <div class="cdiv"></div>
+    <div class="ci"><div class="ci-loc">Discovery Garden</div><div class="ci-tel">04 4495360<br>04 4495361</div></div>
+    <div class="ci"><div class="ci-loc">Zabeel</div><div class="ci-tel">04 3972992<br>04 3972995</div></div>
+    <div class="ci">
+      <div class="ci-loc">
+        <span style="background:#25D366;border-radius:50%;width:16px;height:16px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.849L.057 23.535a.75.75 0 00.92.92l5.686-1.475A11.932 11.932 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.718 9.718 0 01-4.979-1.371l-.356-.212-3.698.959.981-3.584-.232-.369A9.718 9.718 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+        </span>
+        Home Service
+      </div>
+      <div class="ci-tel" style="color:#25D366;font-weight:900;font-size:15px;margin-top:4px;">050 752 2604</div>
+      <div style="font-size:10px;color:#aaa;font-family:sans-serif;margin-top:2px;">WhatsApp welcome</div>
+    </div>
+  </div></div>
+</div>
+
+<!-- TERMS -->
+<div class="sec">
+  <div class="tbox"><div class="ttitle">Terms &amp; Conditions</div><div class="tgrid">
+    <div class="term"><div class="tdot"></div>Payment must be made in full prior to start of package</div>
+    <div class="term"><div class="tdot"></div>All packages are valid for one month only</div>
+    <div class="term"><div class="tdot"></div>Cannot be shared by 2 or more ladies</div>
+    <div class="term"><div class="tdot"></div>Items once taken cannot be repeated in the same package</div>
+    <div class="term"><div class="tdot"></div>Customised packages available as per individual requirements</div>
+    <div class="term"><div class="tdot"></div>Prior appointments are recommended for better service</div>
+    <div class="term"><div class="tdot"></div>Prices are subject to change without prior notice</div>
+    <div class="term"><div class="tdot"></div>Gift vouchers available at all branches</div>
+  </div></div>
+</div>
+
+<div class="footer">
+  <div class="footer-tag">"Everyone deserves a little indulgence — come and experience what The Red Lounge has to offer."</div>
+  <div class="footer-links">
+    <span class="footer-link">Home Service Available</span>
+    <span style="color:#B88018;">·</span>
+    <span class="footer-link">Gift Vouchers Available</span>
+  </div>
+</div>
+
+</div>
+</div>
